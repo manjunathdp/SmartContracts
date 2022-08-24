@@ -18,7 +18,7 @@ contract myfile
         }
        
     }
-    //boolen function
+ //boolen function
     function setBool(bool _myBool) public{
         if(_myBool){
             myUint=100;
@@ -27,7 +27,7 @@ contract myfile
             myUint=0;
         }
     }*/
-    // increment and decrement function
+ // increment and decrement function
     /*function incUint() public{
         myUint++;
         if(myUint==10)
@@ -47,6 +47,12 @@ contract myfile
     }
     function getBalance() public view returns(uint){
         return Account.balance;
+    }
+    */
+//Function to set string
+    /*
+    function setMyString(string memory _MyString)public {
+        mystring=_MyString;
     }
     */
     
