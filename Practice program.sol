@@ -1,6 +1,6 @@
 pragma solidity ^0.5.11;
-contract myfile
-{
+//contract myfile
+//{
     //string public mystring="Hello World";
     //int public myUint=0;
     //bool myBool;
@@ -55,7 +55,19 @@ contract myfile
         mystring=_MyString;
     }
     */
-    
+   }
 
+ // Money Tx contract from one account to another
+    contract SendMoney {
+        uint  balanceRec;
+       
+        function ReciveMoney() public payable {
+            balanceRec += msg.value;
+            }
+        function SendMoneyTo(address payable _to) public {
+           
+            _to.transfer(balanceRec);
 
-}
+        }
+
+    }
