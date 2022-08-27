@@ -1,10 +1,15 @@
-// Money Tx contract from one account to another
 pragma solidity ^0.8.0;
 
 contract SendMoney {
+    address owner;
+
+    constructor() public {
+        owner = msg.sender;
+    }
+
     uint256 balanceRec;
 
-    function getBalance(address _Acc) public view returns (uint256) {
+    function checkBalance(address _Acc) public view returns (uint256) {
         return _Acc.balance;
     }
 
@@ -13,6 +18,7 @@ contract SendMoney {
     }
 
     function SendMoneyTo(address payable _to) public payable {
+        require(msg.sender == owner, "You R Not owner");
         _to.transfer(balanceRec);
     }
 }
